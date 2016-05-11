@@ -1,0 +1,13 @@
+TypeIntent tell me about {Type}
+TypeIntent give me info for {Type}
+TypeIntent tell me about {Type} types
+TypeIntent give me info for {Type} types
+TypeIntent {Type} type
+TypeIntent what is {Type} type
+TypeIntent give me the matchup for {Type} type
+TypeIntent tell me about {Type} Pokemon
+TypeIntent give me info for {Type} Pokemon
+TypeIntent tell me about {Type} type Pokemon
+TypeIntent give me info for {Type} type Pokemon
+TypeIntent {Type} type Pokemon
+TypeIntent give me the matchup for {Type} type Pokemon

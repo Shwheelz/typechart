@@ -13,7 +13,7 @@ import com.amazon.speech.speechlet.SessionStartedRequest;
 import com.amazon.speech.speechlet.Speechlet;
 import com.amazon.speech.speechlet.SpeechletException;
 import com.amazon.speech.speechlet.SpeechletResponse;
-import com.amazon.speech.ui.PlainTextOurputSpeech;
+import com.amazon.speech.ui.PlainTextOutputSpeech;
 import com.amazon.speech.ui.Reprompt;
 import com.amazon.speech.ui.SimpleCard;
 import sun.net.www.content.text.PlainTextInputStream;
@@ -48,8 +48,8 @@ public class TypeChartSpeechlet implements Speechlet {
     }
 
     @Override
-    public SpeechletResponse onIntent(final IntentRequest reqeust, final Session session) throws SpeechletException {
-        log.info("onSessionStarted requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
+    public SpeechletResponse onIntent(final IntentRequest request, final Session session) throws SpeechletException {
+        log.info("onIntent requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
 
         Intent intent = request.getIntent();
         String intentName = (intent != null) ? intent.getName() : null;
@@ -109,6 +109,13 @@ public class TypeChartSpeechlet implements Speechlet {
         else {
             return getHelp();
         }
+    }
+
+    private SpeechletResponse getHelp() {
+        String speechOutput = "You can ask for information on any type, and I'll tell you about its " +
+                "matchups.  Go ahead and tell me which type you'd like to hear about.";
+        String repromptText = "Try saying, tell me about electric Pokemon. Or, you can say exit. Go ahead.";
+        return newAskResponse(speechOutput, repromptText);
     }
 
     private SpeechletResponse newAskResponse(String stringOutput, String repromptText) {

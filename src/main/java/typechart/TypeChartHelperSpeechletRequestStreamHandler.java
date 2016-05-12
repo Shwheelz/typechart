@@ -11,7 +11,7 @@ public final class TypeChartHelperSpeechletRequestStreamHandler extends
 
     static {
         supportedApplicationIds = new HashSet<String>();
-        supportedApplicationIds.add("amzn1.echo-sdk-ams.app.bb081e01-e68f-4d84-b25b-439816864a52")
+        supportedApplicationIds.add("amzn1.echo-sdk-ams.app.bb081e01-e68f-4d84-b25b-439816864a52");
     }
 
     public TypeChartHelperSpeechletRequestStreamHandler() { super(new TypeChartSpeechlet(), supportedApplicationIds); }
